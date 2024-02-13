@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <input type="text">
+            <button type="submit">질문하기!</button>
+        </form>
+        <div class="answer"></div>
+    </div>
+    <script>
+        const $input = document.querySelector('input')
+        const $button = document.querySelector('button')
+        const $answer = document.querySelector('.answer')
+
+        const data = []
+        data.push({
+            "role": "system",
+            "content": "너는 전세계 모든 곳을 여행하고 여행 계획을 만족스럽게 작성하는 전문가야. 인사말은 20자내로 간단하게 해주고 나에게 어디로 갈 것인지, 기간을 얼마나 갈 것인지 물어봐줘. 그리고 내가 입력한 값에 대해서 해당 기간동안 계획을 작성해주고 하루 하루 날씨는 어떤지 확인해줘"
+        })
+
+        const url = `https://open-api.jejucodingcamp.workers.dev/`
+        
+        $button.addEventListener('click', e => {
+            e.preventDefault()
+            const contents = $input.value
+            data.push({
+                "role": "user",
+                "content": contents
+            })
+            $input.value = ''
+
+            chatGPTAPI()
+        })
+
+        function chatGPTAPI() {
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data),
+                redirect: 'follow'
+            })
+            .then(res => res.json())
+            .then(res => {
+                console.log(res)
+                // 답변 온 것을 assistant로 저장
+                $answer.innerHTML = `<p>${res.choices[0].message.content}</p>`
+            })
+        }
+    </script>
+</body>
+</html>
