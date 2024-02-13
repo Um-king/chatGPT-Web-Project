@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Slider</title>
+    <style>
+        .slider-container {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .slider-content {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .btn-people-group {
+            min-width: 20%; /* Adjust based on how many items you want visible */
+            flex: 0 0 auto;
+            margin-right: 10px;
+            text-align: center;
+        }
+
+        .scroll-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            background-color: #74c476;
+            color: white;
+            border: none;
+            padding: 10px;
+            z-index: 100;
+        }
+
+        .scroll-btn.left {
+            left: 0;
+        }
+
+        .scroll-btn.right {
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slider-container">
+    <div class="slider-content" id="slider-content">
+        <!-- Example items -->
+        <div class="btn-people-group">1</div>
+        <div class="btn-people-group">2</div>
+        <div class="btn-people-group">3</div>
+        <div class="btn-people-group">3</div>
+        <div class="btn-people-group">3</div>
+        <div class="btn-people-group">3</div>
+        <div class="btn-people-group">3</div>
+        <div class="btn-people-group">3</div>
+        <div class="btn-people-group">3</div>
+        <div class="btn-people-group">3</div>
+        <div class="btn-people-group">3</div>
+        <div class="btn-people-group">3</div>
+        <div class="btn-people-group">3</div>
+        <div class="btn-people-group">3</div>
+        <div class="btn-people-group">3</div>
+        <div class="btn-people-group">3</div>
+        <div class="btn-people-group">3</div>
+        <div class="btn-people-group">3</div>
+        <div class="btn-people-group">3</div>
+        <div class="btn-people-group">3</div>
+        <div class="btn-people-group">3</div>
+        <div class="btn-people-group">3</div>
+        <div class="btn-people-group">3</div>
+        <div class="btn-people-group">3</div>
+      
+        <!-- Add more items as needed -->
+    </div>
+    <button class="scroll-btn left" onclick="scrollHorizontal('left')">&#9664;</button>
+    <button class="scroll-btn right" onclick="scrollHorizontal('right')">&#9654;</button>
+</div>
+
+<script>
+    let currentIndex = 0; // Current slide index
+    let itemWidth = 0; // Width of a single item; set dynamically
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const slider = document.getElementById("slider-content");
+        const items = slider.getElementsByClassName("btn-people-group");
+        if (items.length > 0) {
+            itemWidth = items[0].offsetWidth + 10; // Assuming 10px margin; adjust as necessary
+        }
+    });
+
+    function scrollHorizontal(direction) {
+        const slider = document.getElementById("slider-content");
+        const maxScroll = slider.scrollWidth - slider.offsetWidth;
+
+        if (direction === 'left') {
+            currentIndex -= itemWidth;
+            if (currentIndex < 0) currentIndex = 0;
+        } else if (direction === 'right') {
+            currentIndex += itemWidth;
+            if (currentIndex > maxScroll) currentIndex = maxScroll;
+        }
+
+        slider.style.transform = `translateX(${-currentIndex}px)`;
+    }
+</script>
+
+</body>
+</html>

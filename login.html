@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여행 계획 사이트</title>
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            /* background-color: #effbef;  */
+        }
+
+        .login-container {
+            padding: 2em;
+            background: #ffffff;
+            /* White background for the form */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            width: 350px;
+            text-align: center;
+        }
+
+        .login-container h2 {
+            color: #2d572c;
+            /* Dark green color for contrast */
+            margin-bottom: 1em;
+        }
+
+        .form-field {
+            margin-bottom: 1em;
+        }
+
+        .form-field input {
+            width: 100%;
+            padding: 1em;
+            border: 1px solid #a4d3a2;
+            /* Soft green border */
+            border-radius: 10px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .form-field input:focus {
+            outline: none;
+            border-color: #216d23;
+            /* Brighter green for focus */
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 1em;
+            background-color: #74c476;
+            /* Bright green color */
+            border: none;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 1em;
+        }
+
+        .login-button:hover {
+            background-color: #44ae4d;
+            /* A deeper green for hover state */
+        }
+
+        .footer-text {
+            margin-top: 2em;
+            color: #2d572c;
+            font-size: 14px;
+        }
+
+        .footer-text a {
+            color: #74c476;
+            text-decoration: none;
+        }
+
+        .footer-text a:hover {
+            text-decoration: underline;
+            color: #238426
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-container">
+        <h2>Welcome Everyone</h2>
+        <!-- form 태그 추가 및 action 속성 설정 -->
+        <form action="index.html" method="get">
+            <!-- <form action="index.html" method="post"> 서버 연결 문제? -> Get 사용시 url ID, PW 정보 출력.. -->
+            <div class="form-field">
+                <input type="text" placeholder="Username" name="username" required>
+            </div>
+            <div class="form-field">
+                <input type="password" placeholder="Password" name="password" required>
+            </div>
+            <!-- button 태그에 type="submit" 추가 -->
+            <button type="submit" class="login-button">LOGIN</button>
+        </form>
+        <div class="footer-text">
+            Don't have an account? <a href="#">Sign In</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

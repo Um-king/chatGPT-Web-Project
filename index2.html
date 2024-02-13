@@ -1,3 +1,4 @@
+<!-- 240213 원본 V1 -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -312,16 +313,14 @@
             height: 120px;
             border-radius: 10px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            border: 1px solid #ddd;
+            border: 1px solid #eee;
             background-color: white;
-            font-size: 15px;
-            cursor: pointer;
         }
 
         .btn-people-group-contanier {
             display: flex;
             align-items: center;
-            justify-content: space-around;
+            justify-content: space-between;
             margin-right: 3px;
 
         }
@@ -333,8 +332,7 @@
 
         .btn-people-group:hover {
             border: 3px solid #569d55;
-            font-size: 20px;
-            font-weight: 700;
+            /* border: 2px solid #9f9e9e; */
         }
 
 
@@ -362,14 +360,8 @@
 
             height: 120px;
             border-radius: 10px;
-            border: 1px solid #ddd;
+            border: 1px solid #eee;
             background-color: white;
-            cursor: pointer;
-        }
-        .btn-going-group:hover {
-            border: 3px solid #569d55;
-            font-size: 18px;
-            font-weight: 700;
         }
 
         .scroll-btn {
@@ -377,18 +369,11 @@
             top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
-            background-color: #fff;
-            color: black;
-            /* border: none; */
-            border: 1px solid #969494;
-            padding: 10px;
-            z-index: 100;
-        }
-
-        .scroll-btn:hover {
             background-color: #74c476;
             color: white;
             border: none;
+            padding: 10px;
+            z-index: 100;
         }
 
         .scroll-btn.left {
@@ -397,12 +382,6 @@
 
         .scroll-btn.right {
             right: 0;
-        }
-        
-        .empty_btn {
-            min-width: 8%;
-            border: none;
-            background-color: white;
         }
     </style>
 </head>
@@ -421,19 +400,19 @@
             <div class="btn-people-group-contanier">
                 <button class="btn-people-group">
                     <img src="image/icon_solo.png" alt="Going solo"> <br>
-                    혼자가기
+                    <span style="font-size: 15px;">혼자가기</span>
                 </button>
                 <button class="btn-people-group">
                     <img src="image/icon_couple.png" alt="Going with partner"> <br>
-                    커플 여행
+                    <span style="font-size: 15px;">커플 여행</span>
                 </button>
                 <button class="btn-people-group">
                     <img src="image/icon_friends.png" alt="Going with friends"> <br>
-                    친구와 여행
+                    <span style="font-size: 15px;">친구와 여행</span>
                 </button>
                 <button class="btn-people-group">
                     <img src="image/icon_fmaily.png" alt="Going with fmaily"> <br>
-                    가족 여행
+                    <span style="font-size: 15px;">가족 여행</span>
                 </button>
             </div>
             <div class="p-people-group-contanier">
@@ -442,56 +421,21 @@
             <div class="slider-container">
                 <div class="slider-content" id="slider-content">
                     <!-- Example items -->
-                    <button class="empty_btn"></button>
                     <button class="btn-going-group">
-                        Jan<br>
-                        <img src="image/icon_calendar3.png" alt="January">
-                    </button>
-                    <button class="btn-going-group">
-                        Feb<br>
-                        <img src="image/icon_calendar3.png" alt="February">
-                    </button>
-                    <button class="btn-going-group">
-                        Mar<br>
-                        <img src="image/icon_calendar3.png" alt="March">
-                    </button>
-                    <button class="btn-going-group">
-                        Apr<br>
-                        <img src="image/icon_calendar3.png" alt="Aprill">
-                    </button>
-                    <button class="btn-going-group">
-                        May<br>
-                        <img src="image/icon_calendar3.png" alt="May">
-                    </button>
-                    <button class="btn-going-group">
-                        Jun<br>
-                        <img src="image/icon_calendar3.png" alt="June">
-                    </button>
-                    <button class="btn-going-group">
-                        Jul<br>
-                        <img src="image/icon_calendar3.png" alt="July">
-                    </button>
-                    <button class="btn-going-group">
-                        Aug<br>
-                        <img src="image/icon_calendar3.png" alt="August">
-                    </button>
-                    <button class="btn-going-group">
-                        Sep<br>
-                        <img src="image/icon_calendar3.png" alt="September">
-                    </button>
-                    <button class="btn-going-group">
-                        Oct<br>
-                        <img src="image/icon_calendar3.png" alt="October">
-                    </button>
-                    <button class="btn-going-group">
-                        Nov<br>
-                        <img src="image/icon_calendar3.png" alt="November">
-                    </button>
-                    <button class="btn-going-group">
-                        Dec<br>
-                        <img src="image/icon_calendar3.png" alt="December">
-                    </button>
-                    <button class="empty_btn"></button>
+                      <img src="image/icon_fmaily.png" alt="Going with fmaily"> <br>
+                      1</button>
+                    <button class="btn-going-group">2</button>
+                    <button class="btn-going-group">3</button>
+                    <button class="btn-going-group">4</button>
+                    <button class="btn-going-group">5</button>
+                    <button class="btn-going-group">6</button>
+                    <button class="btn-going-group">7</button>
+                    <button class="btn-going-group">8</button>
+                    <button class="btn-going-group">9</button>
+                    <button class="btn-going-group">10</button>
+                    <button class="btn-going-group">11</button>
+                    <button class="btn-going-group">12</button>
+                    <!-- Add more items as needed -->
                 </div>
                 <button class="scroll-btn left" onclick="scrollHorizontal('left')">&#9664;</button>
                 <button class="scroll-btn right" onclick="scrollHorizontal('right')">&#9654;</button>
