@@ -1,4 +1,4 @@
-<!-- 240213 원본 V1 -->
+<!-- 240213 원본 V2 -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -313,14 +313,16 @@
             height: 120px;
             border-radius: 10px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            border: 1px solid #eee;
+            border: 1px solid #ddd;
             background-color: white;
+            font-size: 15px;
+            cursor: pointer;
         }
 
         .btn-people-group-contanier {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: space-around;
             margin-right: 3px;
 
         }
@@ -332,7 +334,8 @@
 
         .btn-people-group:hover {
             border: 3px solid #569d55;
-            /* border: 2px solid #9f9e9e; */
+            font-size: 20px;
+            font-weight: 700;
         }
 
 
@@ -360,8 +363,15 @@
 
             height: 120px;
             border-radius: 10px;
-            border: 1px solid #eee;
+            border: 1px solid #ddd;
             background-color: white;
+            cursor: pointer;
+        }
+
+        .btn-going-group:hover {
+            border: 3px solid #569d55;
+            font-size: 18px;
+            font-weight: 700;
         }
 
         .scroll-btn {
@@ -369,11 +379,18 @@
             top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
+            background-color: #fff;
+            color: black;
+            /* border: none; */
+            border: 1px solid #969494;
+            padding: 10px;
+            z-index: 100;
+        }
+
+        .scroll-btn:hover {
             background-color: #74c476;
             color: white;
             border: none;
-            padding: 10px;
-            z-index: 100;
         }
 
         .scroll-btn.left {
@@ -382,6 +399,17 @@
 
         .scroll-btn.right {
             right: 0;
+        }
+
+        .empty_btn {
+            min-width: 8%;
+            border: none;
+            background-color: white;
+        }
+
+        .selected{
+            border: 3px solid #569d55;
+            background-color: #d3f3d2;;
         }
     </style>
 </head>
@@ -397,22 +425,22 @@
             <div class="p-people-group-contanier">
                 <h2>누구와 함께 하시나요?</h2>
             </div>
-            <div class="btn-people-group-contanier">
-                <button class="btn-people-group">
+            <div id="group1" class="btn-people-group-contanier">
+                <button class="btn-people-group" onclick="selectButton(this, 'group1')">
                     <img src="image/icon_solo.png" alt="Going solo"> <br>
-                    <span style="font-size: 15px;">혼자가기</span>
+                    혼자가기
                 </button>
-                <button class="btn-people-group">
+                <button class="btn-people-group" onclick="selectButton(this, 'group1')">
                     <img src="image/icon_couple.png" alt="Going with partner"> <br>
-                    <span style="font-size: 15px;">커플 여행</span>
+                    커플 여행
                 </button>
-                <button class="btn-people-group">
+                <button class="btn-people-group" onclick="selectButton(this, 'group1')">
                     <img src="image/icon_friends.png" alt="Going with friends"> <br>
-                    <span style="font-size: 15px;">친구와 여행</span>
+                    친구와 여행
                 </button>
-                <button class="btn-people-group">
+                <button class="btn-people-group" onclick="selectButton(this, 'group1')">
                     <img src="image/icon_fmaily.png" alt="Going with fmaily"> <br>
-                    <span style="font-size: 15px;">가족 여행</span>
+                    가족 여행
                 </button>
             </div>
             <div class="p-people-group-contanier">
@@ -421,21 +449,56 @@
             <div class="slider-container">
                 <div class="slider-content" id="slider-content">
                     <!-- Example items -->
-                    <button class="btn-going-group">
-                      <img src="image/icon_fmaily.png" alt="Going with fmaily"> <br>
-                      1</button>
-                    <button class="btn-going-group">2</button>
-                    <button class="btn-going-group">3</button>
-                    <button class="btn-going-group">4</button>
-                    <button class="btn-going-group">5</button>
-                    <button class="btn-going-group">6</button>
-                    <button class="btn-going-group">7</button>
-                    <button class="btn-going-group">8</button>
-                    <button class="btn-going-group">9</button>
-                    <button class="btn-going-group">10</button>
-                    <button class="btn-going-group">11</button>
-                    <button class="btn-going-group">12</button>
-                    <!-- Add more items as needed -->
+                    <button class="empty_btn"></button>
+                    <button class="btn-going-group" onclick="selectButton(this, 'slider-content')">
+                        Jan<br>
+                        <img src="image/icon_calendar3.png" alt="January">
+                    </button>
+                    <button class="btn-going-group" onclick="selectButton(this, 'slider-content')">
+                        Feb<br>
+                        <img src="image/icon_calendar3.png" alt="February">
+                    </button>
+                    <button class="btn-going-group" onclick="selectButton(this, 'slider-content')">
+                        Mar<br>
+                        <img src="image/icon_calendar3.png" alt="March">
+                    </button>
+                    <button class="btn-going-group" onclick="selectButton(this, 'slider-content')">
+                        Apr<br>
+                        <img src="image/icon_calendar3.png" alt="Aprill">
+                    </button>
+                    <button class="btn-going-group" onclick="selectButton(this, 'slider-content')">
+                        May<br>
+                        <img src="image/icon_calendar3.png" alt="May">
+                    </button>
+                    <button class="btn-going-group" onclick="selectButton(this, 'slider-content')">
+                        Jun<br>
+                        <img src="image/icon_calendar3.png" alt="June">
+                    </button>
+                    <button class="btn-going-group" onclick="selectButton(this, 'slider-content')">
+                        Jul<br>
+                        <img src="image/icon_calendar3.png" alt="July">
+                    </button>
+                    <button class="btn-going-group" onclick="selectButton(this, 'slider-content')">
+                        Aug<br>
+                        <img src="image/icon_calendar3.png" alt="August">
+                    </button>
+                    <button class="btn-going-group" onclick="selectButton(this, 'slider-content')">
+                        Sep<br>
+                        <img src="image/icon_calendar3.png" alt="September">
+                    </button>
+                    <button class="btn-going-group" onclick="selectButton(this, 'slider-content')">
+                        Oct<br>
+                        <img src="image/icon_calendar3.png" alt="October">
+                    </button>
+                    <button class="btn-going-group" onclick="selectButton(this, 'slider-content')">
+                        Nov<br>
+                        <img src="image/icon_calendar3.png" alt="November">
+                    </button>
+                    <button class="btn-going-group" onclick="selectButton(this, 'slider-content')">
+                        Dec<br>
+                        <img src="image/icon_calendar3.png" alt="December">
+                    </button>
+                    <button class="empty_btn"></button>
                 </div>
                 <button class="scroll-btn left" onclick="scrollHorizontal('left')">&#9664;</button>
                 <button class="scroll-btn right" onclick="scrollHorizontal('right')">&#9654;</button>
@@ -538,6 +601,17 @@
             }
 
             slider.style.transform = `translateX(${-currentIndex}px)`;
+        }
+
+
+        // 버튼 클릭 시 해당 버튼 체크 사항 반영
+        function selectButton(clickedButton, groupId) {
+            // 해당 그룹 내의 모든 버튼의 'selected' 클래스 제거
+            const buttons = document.querySelectorAll('#' + groupId + ' .btn-people-group, #' + groupId + ' .btn-going-group');
+            buttons.forEach(btn => btn.classList.remove('selected'));
+
+            // 클릭된 버튼에 'selected' 클래스 추가
+            clickedButton.classList.add('selected');
         }
     </script>
 

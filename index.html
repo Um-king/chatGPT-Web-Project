@@ -366,6 +366,7 @@
             background-color: white;
             cursor: pointer;
         }
+
         .btn-going-group:hover {
             border: 3px solid #569d55;
             font-size: 18px;
@@ -398,11 +399,16 @@
         .scroll-btn.right {
             right: 0;
         }
-        
+
         .empty_btn {
             min-width: 8%;
             border: none;
             background-color: white;
+        }
+
+        .selected{
+            border: 3px solid #569d55;
+            background-color: #d3f3d2;;
         }
     </style>
 </head>
@@ -418,20 +424,20 @@
             <div class="p-people-group-contanier">
                 <h2>누구와 함께 하시나요?</h2>
             </div>
-            <div class="btn-people-group-contanier">
-                <button class="btn-people-group">
+            <div id="group1" class="btn-people-group-contanier">
+                <button class="btn-people-group" onclick="selectButton(this, 'group1')">
                     <img src="image/icon_solo.png" alt="Going solo"> <br>
                     혼자가기
                 </button>
-                <button class="btn-people-group">
+                <button class="btn-people-group" onclick="selectButton(this, 'group1')">
                     <img src="image/icon_couple.png" alt="Going with partner"> <br>
                     커플 여행
                 </button>
-                <button class="btn-people-group">
+                <button class="btn-people-group" onclick="selectButton(this, 'group1')">
                     <img src="image/icon_friends.png" alt="Going with friends"> <br>
                     친구와 여행
                 </button>
-                <button class="btn-people-group">
+                <button class="btn-people-group" onclick="selectButton(this, 'group1')">
                     <img src="image/icon_fmaily.png" alt="Going with fmaily"> <br>
                     가족 여행
                 </button>
@@ -443,51 +449,51 @@
                 <div class="slider-content" id="slider-content">
                     <!-- Example items -->
                     <button class="empty_btn"></button>
-                    <button class="btn-going-group">
+                    <button class="btn-going-group" onclick="selectButton(this, 'slider-content')">
                         Jan<br>
                         <img src="image/icon_calendar3.png" alt="January">
                     </button>
-                    <button class="btn-going-group">
+                    <button class="btn-going-group" onclick="selectButton(this, 'slider-content')">
                         Feb<br>
                         <img src="image/icon_calendar3.png" alt="February">
                     </button>
-                    <button class="btn-going-group">
+                    <button class="btn-going-group" onclick="selectButton(this, 'slider-content')">
                         Mar<br>
                         <img src="image/icon_calendar3.png" alt="March">
                     </button>
-                    <button class="btn-going-group">
+                    <button class="btn-going-group" onclick="selectButton(this, 'slider-content')">
                         Apr<br>
                         <img src="image/icon_calendar3.png" alt="Aprill">
                     </button>
-                    <button class="btn-going-group">
+                    <button class="btn-going-group" onclick="selectButton(this, 'slider-content')">
                         May<br>
                         <img src="image/icon_calendar3.png" alt="May">
                     </button>
-                    <button class="btn-going-group">
+                    <button class="btn-going-group" onclick="selectButton(this, 'slider-content')">
                         Jun<br>
                         <img src="image/icon_calendar3.png" alt="June">
                     </button>
-                    <button class="btn-going-group">
+                    <button class="btn-going-group" onclick="selectButton(this, 'slider-content')">
                         Jul<br>
                         <img src="image/icon_calendar3.png" alt="July">
                     </button>
-                    <button class="btn-going-group">
+                    <button class="btn-going-group" onclick="selectButton(this, 'slider-content')">
                         Aug<br>
                         <img src="image/icon_calendar3.png" alt="August">
                     </button>
-                    <button class="btn-going-group">
+                    <button class="btn-going-group" onclick="selectButton(this, 'slider-content')">
                         Sep<br>
                         <img src="image/icon_calendar3.png" alt="September">
                     </button>
-                    <button class="btn-going-group">
+                    <button class="btn-going-group" onclick="selectButton(this, 'slider-content')">
                         Oct<br>
                         <img src="image/icon_calendar3.png" alt="October">
                     </button>
-                    <button class="btn-going-group">
+                    <button class="btn-going-group" onclick="selectButton(this, 'slider-content')">
                         Nov<br>
                         <img src="image/icon_calendar3.png" alt="November">
                     </button>
-                    <button class="btn-going-group">
+                    <button class="btn-going-group" onclick="selectButton(this, 'slider-content')">
                         Dec<br>
                         <img src="image/icon_calendar3.png" alt="December">
                     </button>
@@ -594,6 +600,17 @@
             }
 
             slider.style.transform = `translateX(${-currentIndex}px)`;
+        }
+
+
+        // 버튼 클릭 시 해당 버튼 체크 사항 반영
+        function selectButton(clickedButton, groupId) {
+            // 해당 그룹 내의 모든 버튼의 'selected' 클래스 제거
+            const buttons = document.querySelectorAll('#' + groupId + ' .btn-people-group, #' + groupId + ' .btn-going-group');
+            buttons.forEach(btn => btn.classList.remove('selected'));
+
+            // 클릭된 버튼에 'selected' 클래스 추가
+            clickedButton.classList.add('selected');
         }
     </script>
 
