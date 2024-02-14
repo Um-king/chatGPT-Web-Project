@@ -53,113 +53,20 @@
 ## 4. 프로젝트 구조와 개발 일정
 ### 4.1 프로젝트 구조
 - 해당 프로젝트에서 폴더 트리 잘 다듬어 사용하세요. 필요하다면 주석을 달아주세요.
-📦tutorial  
- ┣ 📂accounts  
- ┃ ┣ 📂migrations  
- ┃ ┣ 📂__pycache__  
- ┃ ┣ 📜admin.py  
- ┃ ┣ 📜apps.py  
- ┃ ┣ 📜forms.py  
- ┃ ┣ 📜models.py  
- ┃ ┣ 📜tests.py  
- ┃ ┣ 📜urls.py  
- ┃ ┣ 📜views.py  
- ┃ ┗ 📜__init__.py  
- ┣ 📂blog  
- ┃ ┣ 📂migrations  
- ┃ ┣ 📂__pycache__  
- ┃ ┣ 📜admin.py  
- ┃ ┣ 📜apps.py  
- ┃ ┣ 📜forms.py  
- ┃ ┣ 📜models.py  
- ┃ ┣ 📜tests.py  
- ┃ ┣ 📜urls.py  
- ┃ ┣ 📜views.py  
- ┃ ┗ 📜__init__.py  
- ┣ 📂board  
- ┃ ┣ 📂migrations  
- ┃ ┣ 📂__pycache__  
- ┃ ┣ 📜admin.py  
- ┃ ┣ 📜apps.py  
- ┃ ┣ 📜forms.py  
- ┃ ┣ 📜models.py  
- ┃ ┣ 📜tests.py  
- ┃ ┣ 📜urls.py  
- ┃ ┣ 📜views.py  
- ┃ ┗ 📜__init__.py  
+📦chatGPT-Web-Project  
+ ┣ 📂css  
+ ┃ ┗ 📜style.css  
+ ┣ 📂js  
+ ┃ ┗ 📜index.js  
  ┣ 📂main  
- ┃ ┣ 📂migrations  
- ┃ ┣ 📂__pycache__  
- ┃ ┣ 📜admin.py  
- ┃ ┣ 📜apps.py  
- ┃ ┣ 📜models.py  
- ┃ ┣ 📜tests.py  
- ┃ ┣ 📜urls.py  
- ┃ ┣ 📜views.py  
- ┃ ┗ 📜__init__.py  
- ┣ 📂media  
- ┃ ┣ 📂accounts  
- ┃ ┣ 📂blog  
- ┃ ┗ 📂board  
- ┣ 📂static  
- ┃ ┣ 📂assets  
- ┃ ┃ ┣ 📂css  
- ┃ ┃ ┃ ┣ 📂apps  
- ┃ ┃ ┃ ┣ 📂authentication  
- ┃ ┃ ┃ ┣ 📂components  
- ┃ ┃ ┃ ┣ 📂dashboard  
- ┃ ┃ ┃ ┣ 📂elements  
- ┃ ┃ ┃ ┣ 📂forms  
- ┃ ┃ ┃ ┣ 📂pages  
- ┃ ┃ ┃ ┣ 📂tables  
- ┃ ┃ ┃ ┣ 📂users  
- ┃ ┃ ┣ 📂images  
- ┃ ┃ ┃ ┣ 📂mockup_image  
- ┃ ┃ ┣ 📂img  
- ┃ ┃ ┗ 📂js  
- ┃ ┣ 📂bootstrap  
- ┃ ┃ ┣ 📂css  
- ┃ ┃ ┗ 📂js  
- ┃ ┗ 📂plugins  
- ┣ 📂tech_blog  
- ┃ ┣ 📂__pycache__  
- ┃ ┣ 📜.env  
- ┃ ┣ 📜asgi.py  
- ┃ ┣ 📜settings.py  
- ┃ ┣ 📜urls.py  
- ┃ ┣ 📜wsgi.py  
- ┃ ┗ 📜__init__.py  
- ┣ 📂templates  
- ┃ ┣ 📂accounts  
- ┃ ┃ ┣ 📜login.html  
- ┃ ┃ ┣ 📜password_change.html  
- ┃ ┃ ┣ 📜profile.html  
- ┃ ┃ ┣ 📜profile_edit.html  
- ┃ ┃ ┣ 📜signup.html  
- ┃ ┃ ┗ 📜user_list.html  
- ┃ ┣ 📂blog  
- ┃ ┃ ┣ 📜blog_base.html  
- ┃ ┃ ┣ 📜post_detail.html  
- ┃ ┃ ┣ 📜post_form.html  
- ┃ ┃ ┣ 📜post_list.html  
- ┃ ┃ ┗ 📜post_not_found.html  
- ┃ ┣ 📂board  
- ┃ ┃ ┣ 📜board_base.html  
- ┃ ┃ ┣ 📜board_post_detail.html  
- ┃ ┃ ┣ 📜board_post_form.html  
- ┃ ┃ ┗ 📜board_post_list.html  
- ┃ ┣ 📂main  
- ┃ ┃ ┗ 📜index.html  
- ┃ ┣ 📜404.html  
- ┃ ┗ 📜base.html  
- ┣ 📜CONVENTION.md  
- ┣ 📜db.sqlite3  
- ┣ 📜manage.py  
- ┣ 📜README.md  
- ┗ 📜requirements.txt  
+ ┃ ┣ 📜login.html  
+ ┃ ┗ 📜index.html 
+ ┣ 📂image  
+ ┃  ┣ 📂marker  
+ ┃  ┗ 📂icon
+ ┗ 📜splashscreen.html 
 
 ### 4.1 개발 일정(WBS)
-* 아래 일정표는 머메이드로 작성했습니다.
 ```mermaid
 gantt
     title 프로젝트 일정
