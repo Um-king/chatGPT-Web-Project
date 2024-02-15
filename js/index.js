@@ -17,7 +17,7 @@ document.getElementById('chat-form').addEventListener('submit', function (e) {
 
     // 색상별 마커 내역 생성
     let redMarker = L.icon({
-        iconUrl: '../image/marker/icon_redMarker.png', // 마커 이미지 URL
+        iconUrl: '../../image/marker/icon_redMarker.png', // 마커 이미지 URL
         iconSize: [25, 30], // 아이콘 크기
         iconAnchor: [12, 41], // 아이콘의 앵커 포인트
         popupAnchor: [1, -34], // 팝업의 앵커 포인트
