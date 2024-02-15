@@ -183,68 +183,13 @@ gantt
         </tr>
     </tbody>
 </table>
+<p align="center">
+    <img src="README_img/plan_site_v1.gif" width = "70%">
+</p>
 
 
-## 6. 데이터베이스 모델링(ERD)
 
-* 아래 ERD는 머메이드를 사용했습니다.
-```mermaid
-erDiagram
-    user ||--o{ post : write
-    user {
-      integer id PK
-      varchar username
-      varchar password
-      image profile_image
-      datetime created_at
-      varchar ip_address
-      datetime last_login
-    }
-    post }|--|{ tag : contains
-    post ||--o| category : has
-    post {
-      integer id PK
-      varchar title
-      text content
-      file file_upload
-      image image_upload
-      datetime created_at
-      datetime updated_at
-      varchar writer
-      integer user_id FK
-      integer hits
-      integer tags FK
-      varchar category FK
-    }
-    post ||--o{ comment : contains
-    comment ||--o{ comment : contains
-    comment {
-      integer id PK
-      integer parent FK
-      text comment
-      comment comment_reply FK
-      datetime created_at
-      datetime updated_at
-    }
-    
-    tag {
-      integer id PK
-      varchar name
-    }
-    
-    
-    category {
-      integer id PK
-      varchar name
-    }
-```
-
-* 아래 ERD는 [ERDCloud](https://www.erdcloud.com/)를 사용했습니다.
-<img src="erd.png" width="60%">
-
-* https://dbdiagram.io/home도 많이 사용합니다.
-
-## 7. Architecture
+## 6. Architecture
 
 * 아래 Architecture 설계도는 ChatGPT에게 아키텍처를 설명하고 mermaid로 그려달라 요청한 것입니다.
 ```mermaid
@@ -275,7 +220,7 @@ graph TD;
 
 - PPT로 간단하게 작성하였으나, 아키텍쳐가 커지거나, 상세한 내용이 필요할 경우 [AWS architecture Tool](https://online.visual-paradigm.com/ko/diagrams/features/aws-architecture-diagram-tool/)을 사용하기도 합니다.
 
-## 8. 메인 기능
+## 7. 메인 기능
 
 
 ```mermaid
@@ -305,7 +250,7 @@ graph TD;
 	    성공 --> [*]
 ```
 
-## 9. 에러와 에러 해결
+## 8. 에러와 에러 해결
 
 
-## 10. 개발하며 느낀점
+## 9. 개발하며 느낀점
