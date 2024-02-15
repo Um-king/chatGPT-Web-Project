@@ -1,6 +1,6 @@
 # 🚀 넌 어디든 갈 수 있어
 <p align="center">
-<img src="https://github.com/Um-king/chatGPT-Web-Project/assets/52156476/b455d750-b6a7-4162-bde7-a50ca4343262" width="100%" height="450px"/>
+<img src="title image.jpg" width="100%" height="450px"/>
 </p>
 
 ## 📝 GPT를 활용한 프로젝트 
@@ -128,23 +128,23 @@ gantt
         </tr>
         <tr>
             <td>
-		<img src="https://github.com/Um-king/chatGPT-Web-Project/assets/52156476/abbbab75-2953-4e3c-9d9c-2a8fee09c8a3" width="100%"/>
+		<img src="01_project.png" width="100%"/>
             </td>
             <td>
-                <img src="https://github.com/Um-king/chatGPT-Web-Project/assets/52156476/b1d2f8fc-846f-4d3e-baef-949b3603e899" width="100%"/>
+                <img src="02_Login Page.png" width="100%"/>
             </td>
         </tr>
         <tr>
            <td>
-                <img src="https://github.com/Um-king/chatGPT-Web-Project/assets/52156476/85bd0514-fcb4-47c4-be31-9b25a8825320" width="100%"/>
+                <img src="03_Main Page.png" width="100%"/>
             </td>
 	     <td>
-                <img src="https://github.com/Um-king/chatGPT-Web-Project/assets/52156476/37d68527-74f4-47a9-bb50-d538de727d8d" width="100%"/>
+                <img src="04_Chatting Page.png" width="100%"/>
             </td>
         </tr>
         <tr>
             <td>
-                <img src="https://github.com/Um-king/chatGPT-Web-Project/assets/52156476/93039079-da54-4927-8637-39e5dd1fbb89" width="100%"/>
+                <img src="05_Result Page.png" width="100%"/>
             </td>
             <td>
             </td>
@@ -158,63 +158,27 @@ gantt
 <table>
     <tbody>
         <tr>
-            <td>메인</td>
             <td>로그인</td>
+            <td>메인</td>
         </tr>
         <tr>
             <td>
-		<img src="https://github.com/Um-king/chatGPT-Web-Project/assets/52156476/abbbab75-2953-4e3c-9d9c-2a8fee09c8a3" width="100%"/>
+		<img src="ui_login.png" width="100%"/>
             </td>
             <td>
-                <img src="https://github.com/Um-king/chatGPT-Web-Project/assets/52156476/b1d2f8fc-846f-4d3e-baef-949b3603e899" width="100%"/>
-            </td>
-        </tr>
-        <tr>
-            <td>회원가입</td>
-            <td>정보수정</td>
-        </tr>
-        <tr>
-            <td>
-                <img src="ui3.png" width="100%">
-            </td>
-            <td>
-                <img src="ui3.png" width="100%">
+                <img src="ui_main.png" width="100%"/>
             </td>
         </tr>
         <tr>
-            <td>검색</td>
-            <td>번역</td>
+            <td>채팅</td>
+            <td>출력</td>
         </tr>
         <tr>
             <td>
-                <img src="ui3.png" width="100%">
+                <img src="ui_chatting.png" width="100%">
             </td>
             <td>
-                <img src="ui3.png" width="100%">
-            </td>
-        </tr>
-        <tr>
-            <td>선택삭제</td>
-            <td>글쓰기</td>
-        </tr>
-        <tr>
-            <td>
-	        <img src="ui3.png" width="100%">
-            </td>
-            <td>
-                <img src="ui3.png" width="100%">
-            </td>
-        </tr>
-        <tr>
-            <td>글 상세보기</td>
-            <td>댓글</td>
-        </tr>
-        <tr>
-            <td>
-                <img src="ui3.png" width="100%">
-            </td>
-            <td>
-                <img src="ui3.png" width="100%">
+                <img src="ui_result.png" width="100%">
             </td>
         </tr>
     </tbody>
