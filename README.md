@@ -66,6 +66,8 @@
  ┃  ┗ 📂icon
  ┗ 📜splashscreen.html 
 
+
+
 ### 4.1 개발 일정(WBS)
 ```mermaid
 gantt
