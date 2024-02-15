@@ -88,7 +88,7 @@
 ```
 
 
-### 4.1 개발 일정(WBS)
+### 4.2 개발 일정(WBS)
 ```mermaid
 gantt
     title 프로젝트 일정
@@ -117,7 +117,7 @@ gantt
 
 ```
 
-## 5. 와이어프레임 / UI / BM
+## 5. 와이어프레임 / UI
 
 ### 5.1 와이어프레임
 
@@ -190,65 +190,39 @@ gantt
 
 
 ## 6. Architecture
-
-* 아래 Architecture 설계도는 ChatGPT에게 아키텍처를 설명하고 mermaid로 그려달라 요청한 것입니다.
 ```mermaid
-graph TD;
-    CI[GitHub CI/CD] -->|Deploys| LS[AWS Lightsail];
-    A[Django Application] -->|Uses| DRF[Django REST Framework];
-    A -->|Real-time communication| C[Django Channels];
-    C -->|Messaging backend| R[Redis];
-    A -->|Connects to| DB[postgresql];
-    A -->|Static & Media Files| S3[AWS S3];
-    FE[Frontend] -->|Deployed on| LS;
-    LS -->|Hosts| A;
-    LS -->|Hosts| FE;
+graph LR
+    GitHub[GitHub] -- "Deploys" --> Frontend
+    Frontend -- "Request" --> ChatGPTAPI[Open AI API]
+    ChatGPTAPI -- "Response" --> Frontend
+   
 
-    classDef framework fill:#f9f,stroke:#333,stroke-width:2px;
-    classDef aws fill:#ff9,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5;
-    classDef ci fill:#9cf,stroke:#33f,stroke-width:2px;
-    
-    class A,DRF,C,DB framework;
-    class LS,S3 aws;
-    class CI ci;
+    style Frontend fill:#f9f,stroke:#333,stroke-width:2px
+    style ChatGPTAPI fill:#f9f,stroke:#333,stroke-width:2px
+    style GitHub fill:#f9f,stroke:#333,stroke-width:2px
 
 ```
-
-* 아래 Architecture 설계도는 PPT를 사용했습니다.
-  
-![image](./architecture.png)
-
-- PPT로 간단하게 작성하였으나, 아키텍쳐가 커지거나, 상세한 내용이 필요할 경우 [AWS architecture Tool](https://online.visual-paradigm.com/ko/diagrams/features/aws-architecture-diagram-tool/)을 사용하기도 합니다.
 
 ## 7. 메인 기능
+여행 계획 작성 서비스는 사용자의 요청에 따라 사용자의  일정을 작성해주는 서비스로, OpenAI API를 통해 사용자의 요구사항에 맞는 일정을 생성하는 서비스입니다.
+대화형 기능을 통해 사용자로부터 여행에 대한 구체적인 선호도와 요구사항을 파악하고 API를 통해 대화 내용에 따른 결과를 만듭니다. 
+분석 결과가 반환되면 계획의 내용을 출력하고 지도를 활용하여 관광명소 및 맛집 위치를 표현합니다.
 
 
 ```mermaid
-		graph TD
-	    A[하루 시작] -->|일어난다| B(세수한다)
-	    B --> C{오늘은 무엇을 할까}
-	    C -->|밥을 먹는다| D[냉장고 확인]
-	    C -->|다시 잔다| E[침대로 돌아가기]
-	    C -->|티비를 본다| F[거실로 가기]
+graph TD
+    A[사용자] -->|로그인| B(로그인 페이지)
+    B --> C{메인 페이지}
+    C -->|누구와 여행, 일정 선택| D[대화형 기능]
+    D -->|질문| E[OpenAI API]
+    E -->|답변| D
+    D -->|결과 해석| F[일정 및 장소 내역 가공]
+    F -->|추천 일정| G[일정 표시]
+    F -->|추천 장소| H[Map API]
+    H -->|지도에 표시| I[사용자 인터페이스]
 ```
 
-```mermaid
-		sequenceDiagram
-	    A->>+B: B야 소금좀 건내줘
-	    B->>+A: 여기
-	    A-->>-B: 고마워
-```
 
-```mermaid
-		stateDiagram-v2
-	    [*] --> 로그인
-	    로그인 --> 성공
-	    로그인 --> 실패
-	    실패 --> 아이디/비밀번호찾기
-	    아이디/비밀번호찾기 --> 로그인재시도
-	    로그인재시도 --> 성공
-	    성공 --> [*]
-```
 
 ## 8. 에러와 에러 해결
 
