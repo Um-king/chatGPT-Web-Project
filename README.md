@@ -53,7 +53,7 @@
 ## 4. 프로젝트 구조와 개발 일정
 ### 4.1 프로젝트 구조
 - 해당 프로젝트에서 폴더 트리 잘 다듬어 사용하세요. 필요하다면 주석을 달아주세요.
-📦chatGPT-Web-Project  
+📦chatGPT_Web_Project  
  ┣ 📂css  
  ┃ ┗ 📜style.css  
  ┣ 📂js  
