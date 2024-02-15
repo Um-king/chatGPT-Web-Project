@@ -1,4 +1,6 @@
 # 🚀 넌 어디든 갈 수 있어
+![title image](https://github.com/Um-king/chatGPT-Web-Project/assets/52156476/b455d750-b6a7-4162-bde7-a50ca4343262)
+
 <strong>"여행 일정을 작성해 봅시다"</strong>
 
 길었던 코로나19 시기가 끝나고 자유롭게 여행을 떠나고 싶지만 여행 계획을 작성하기 힘든 여행자들을 위한 여행 일정 추천 서비스.
