@@ -79,12 +79,13 @@
  ┣ 📂js  
  ┃ ┗ 📜index.js  
  ┣ 📂main  
- ┃ ┗ 📜login.html 
+ ┃ ┣ 📜login.html 
+ ┃ ┗ 📜splashscreen.html  
  ┣ 📂image  
- ┃  ┣ 📂marker  
- ┃  ┗ 📂icon
- ┣ 📜index.html  
- ┗ 📜splashscreen.html 
+ ┃ ┣ 📂marker  
+ ┃ ┗ 📂icon
+ ┗ 📜index.html  
+ 
 ```
 
 
