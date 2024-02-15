@@ -1,0 +1,135 @@
+<!-- 240215 완성 v1 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여행 계획 사이트</title>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+ 
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="left">
+            <div class="title-container">
+                <h1>넌 어디든 갈 수 있어</h1>
+                <img src="../image/img_logo3.png">
+                <!-- <img src="../image/title.jpg"> -->
+            </div>
+            <div id="left-container-hidden">
+                <div class="p-people-group-contanier">
+                    <h2>누구와 함께 하시나요?</h2>
+                </div>
+                <div id="group1" class="btn-people-group-contanier">
+                    <button class="btn-people-group" onclick="selectButton(this, 'group1')" value="solo">
+                        <img src="../../image/icon/icon_solo.png" alt="Going solo"> <br>
+                        혼자가기
+                    </button>
+                    <button class="btn-people-group" onclick="selectButton(this, 'group1')" value="couple">
+                        <img src="../image/icon/icon_couple.png" alt="Going with partner"> <br>
+                        커플 여행
+                    </button>
+                    <button class="btn-people-group" onclick="selectButton(this, 'group1')" value="friends">
+                        <img src="../image/icon/icon_friends.png" alt="Going with friends"> <br>
+                        친구와 여행
+                    </button>
+                    <button class="btn-people-group" onclick="selectButton(this, 'group1')" value="fmaily">
+                        <img src="../image/icon/icon_fmaily.png" alt="Going with fmaily"> <br>
+                        가족 여행
+                    </button>
+                </div>
+                <div class="p-people-group-contanier">
+                    <h2>언제 출발하시나요?</h2>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-content" id="slider-content">
+                        <!-- Example items -->
+                        <button class="empty_btn"></button>
+                        <button class="btn-going-group" onclick="selectButton(this, 'slider-content')" value="1">
+                            Jan<br>
+                            <img src="../image/icon/icon_calendar3.png" alt="January">
+                        </button>
+                        <button class="btn-going-group" onclick="selectButton(this, 'slider-content')" value="2">
+                            Feb<br>
+                            <img src="../image/icon/icon_calendar3.png" alt="February">
+                        </button>
+                        <button class="btn-going-group" onclick="selectButton(this, 'slider-content')" value="3">
+                            Mar<br>
+                            <img src="../image/icon/icon_calendar3.png" alt="March">
+                        </button>
+                        <button class="btn-going-group" onclick="selectButton(this, 'slider-content')" value="4">
+                            Apr<br>
+                            <img src="../image/icon/icon_calendar3.png" alt="Aprill">
+                        </button>
+                        <button class="btn-going-group" onclick="selectButton(this, 'slider-content')" value="5">
+                            May<br>
+                            <img src="../image/icon/icon_calendar3.png" alt="May">
+                        </button>
+                        <button class="btn-going-group" onclick="selectButton(this, 'slider-content')" value="6">
+                            Jun<br>
+                            <img src="../image/icon/icon_calendar3.png" alt="June">
+                        </button>
+                        <button class="btn-going-group" onclick="selectButton(this, 'slider-content')" value="7">
+                            Jul<br>
+                            <img src="../image/icon/icon_calendar3.png" alt="July">
+                        </button>
+                        <button class="btn-going-group" onclick="selectButton(this, 'slider-content')" value="8">
+                            Aug<br>
+                            <img src="../image/icon/icon_calendar3.png" alt="August">
+                        </button>
+                        <button class="btn-going-group" onclick="selectButton(this, 'slider-content')" value="9">
+                            Sep<br>
+                            <img src="../image/icon/icon_calendar3.png" alt="September">
+                        </button>
+                        <button class="btn-going-group" onclick="selectButton(this, 'slider-content')" value="10">
+                            Oct<br>
+                            <img src="../image/icon/icon_calendar3.png" alt="October">
+                        </button>
+                        <button class="btn-going-group" onclick="selectButton(this, 'slider-content')" value="11">
+                            Nov<br>
+                            <img src="../image/icon/icon_calendar3.png" alt="November">
+                        </button>
+                        <button class="btn-going-group" onclick="selectButton(this, 'slider-content')" value="12">
+                            Dec<br>
+                            <img src="../image/icon/icon_calendar3.png" alt="December">
+                        </button>
+                        <button class="empty_btn"></button>
+                    </div>
+                    <button class="scroll-btn left" onclick="scrollHorizontal('left')">&#9664;</button>
+                    <button class="scroll-btn right" onclick="scrollHorizontal('right')">&#9654;</button>
+                </div>
+            </div>
+            <div class="output-container" id="output-container-hidden">
+                <div id="map" style="height: 55%; width: 100%; margin-bottom: 10px;"></div>
+                <div id="guide" style="height: 45%; width: 100%;margin-right: 10px; overflow-y: scroll; border-radius: 10px; border: 1px solid #ddd; background-color: white;"></div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="chat-messages" id="chat-messages">
+                <!-- Chat messages will be dynamically added here -->
+                <div class="message">
+                    <div class="profile-pic" style="background-image: url('../image/icon/icon_bot.png');"></div>
+                    <div class="text">반갑습니다! 저는 여행 계획 전문가입니다.<br>여행 계획을 위해 기초 내용을 선택해주세요.<br>선택이 완료되었으면 완료를 입력해주세요 :)</div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <form id="chat-form">
+                    <input type="text" id="message-input" placeholder="Type a message..." autocomplete="off">
+                    <button type="submit" id="chatbtn">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script script type="text/javascript" src="../js/index.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    /* background-color: #effbef;  */
+}
+
+.login-container {
+    padding: 2em;
+    background: #ffffff;
+    /* White background for the form */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    width: 350px;
+    text-align: center;
+}
+
+.login-container h2 {
+    color: #2d572c;
+    /* Dark green color for contrast */
+    margin-bottom: 1em;
+}
+
+.form-field {
+    margin-bottom: 1em;
+}
+
+.form-field input {
+    width: 100%;
+    padding: 1em;
+    border: 1px solid #a4d3a2;
+    /* Soft green border */
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.form-field input:focus {
+    outline: none;
+    border-color: #216d23;
+    /* Brighter green for focus */
+}
+
+.login-button {
+    width: 100%;
+    padding: 1em;
+    background-color: #74c476;
+    /* Bright green color */
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 1em;
+}
+
+.login-button:hover {
+    background-color: #44ae4d;
+    /* A deeper green for hover state */
+}
+
+.footer-text {
+    margin-top: 2em;
+    color: #2d572c;
+    font-size: 14px;
+}
+
+.footer-text a {
+    color: #74c476;
+    text-decoration: none;
+}
+
+.footer-text a:hover {
+    text-decoration: underline;
+    color: #238426
+}
+.paper-plane {
+    width: 100px; /* 이미지의 크기를 조절합니다. */
+    height: 100px;
+    border-radius: 50%; /* 이미지를 원형으로 만듭니다. */
+    margin: 20px auto;
+    display: block; /* 이미지를 블록 요소로 만들어 가운데 정렬합니다. */
+}
+h1{
+    color:#4b934d;
+}

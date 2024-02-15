@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여행 계획 사이트</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+        <h1>넌 어디든 갈 수 있어</h1>
+        <img src="image/img_logo.png" class="paper-plane" alt="logo">
+        <!-- form 태그 추가 및 action 속성 설정 -->
+        <form action="main/index.html" method="get">
+            <!-- <form action="index.html" method="post"> 서버 연결 문제? -> Get 사용시 url ID, PW 정보 출력.. -->
+            <div class="form-field">
+                <input type="text" placeholder="Username" name="username" required>
+            </div>
+            <div class="form-field">
+                <input type="password" placeholder="Password" name="password" required>
+            </div>
+            <!-- button 태그에 type="submit" 추가 -->
+            <button type="submit" class="login-button">LOGIN</button>
+        </form>
+        <div class="footer-text">
+            Don't have an account? <a href="#">Sign In</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
