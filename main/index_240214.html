@@ -483,6 +483,9 @@
         </div>
     </div>
 
+    <div id="loadingContainer" style="display:none;"></div>
+
+
     <script>
 
         // 최초 선택 -> 기초 선택 이후인지 확인
@@ -702,7 +705,23 @@
 
                 $input.value = ''
 
+    
+                let loading_container = document.getElementById('loadingContainer');
+                loading_container.style.display = 'block';
+
+                // 로딩 출력
+                // 로딩 HTML 파일을 가져와서 컨테이너에 넣습니다.
+                fetch('test.html')
+                .then(response => response.text())
+                .then(data => {
+                    alert(data)
+                    loading_container.innerHTML = data;
+                    // 이 시점에서 로딩 애니메이션이 시작됩니다.
+                });
+
                 chatGPTAPI(url, data, "click")
+
+                // 로딩 종료
             })
 
         }
