@@ -129,9 +129,9 @@ function addMessageToChat(sender, text) {
     var profilePic = document.createElement('div');
     profilePic.className = 'profile-pic';
     if (sender === 'user') {
-        profilePic.style.backgroundImage = `url('../image/icon/icon_user.png')`;
+        profilePic.style.backgroundImage = "url('../image/icon/icon_user.png')";
     } else {
-        profilePic.style.backgroundImage = `url('../image/icon/icon_bot.png')`;
+        profilePic.style.backgroundImage = "url('../image/icon/icon_bot.png')";
     }
 
     // 메시지 텍스트를 만듭니다.
