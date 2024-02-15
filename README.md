@@ -1,6 +1,6 @@
 # 🚀 넌 어디든 갈 수 있어
 <p align="center">
-<img src="title image.jpg" width="100%" height="450px"/>
+<img src="README_img/title image.jpg" width="100%" height="450px"/>
 </p>
 
 ## 📝 GPT를 활용한 프로젝트 
@@ -19,7 +19,7 @@
 ### 1.2 기능
 - 방문 장소 시각화 자료 제공.
 - 챗봇을 통한 대화 기능 제공.
-- 혼자, 친구, 커플, 가족 카테고리를 통한 그룹별 차별화된 여행 일정 제공
+- 카테고리를 통한 그룹별 차별화된 여행 일정 제공
 
 
 
@@ -74,20 +74,21 @@
 ```
 📦chatGPT_Web_Project  
  ┣ 📂css  
+ ┃ ┣ 📜login.css  
  ┃ ┗ 📜style.css  
  ┣ 📂js  
  ┃ ┗ 📜index.js  
  ┣ 📂main  
- ┃ ┣ 📜login.html  
- ┃ ┗ 📜index.html 
+ ┃ ┗ 📜login.html 
  ┣ 📂image  
  ┃  ┣ 📂marker  
  ┃  ┗ 📂icon
+ ┣ 📜index.html  
  ┗ 📜splashscreen.html 
 ```
 
 
-### 4.1 개발 일정(WBS)
+### 4.2 개발 일정(WBS)
 ```mermaid
 gantt
     title 프로젝트 일정
@@ -116,7 +117,7 @@ gantt
 
 ```
 
-## 5. 와이어프레임 / UI / BM
+## 5. 와이어프레임 / UI
 
 ### 5.1 와이어프레임
 
@@ -128,23 +129,23 @@ gantt
         </tr>
         <tr>
             <td>
-		<img src="01_project.png" width="100%"/>
+		<img src="README_img/01_project.png" width="100%"/>
             </td>
             <td>
-                <img src="02_Login Page.png" width="100%"/>
+                <img src="README_img/02_Login Page.png" width="100%"/>
             </td>
         </tr>
         <tr>
            <td>
-                <img src="03_Main Page.png" width="100%"/>
+                <img src="README_img/03_Main Page.png" width="100%"/>
             </td>
 	     <td>
-                <img src="04_Chatting Page.png" width="100%"/>
+                <img src="README_img/04_Chatting Page.png" width="100%"/>
             </td>
         </tr>
         <tr>
             <td>
-                <img src="05_Result Page.png" width="100%"/>
+                <img src="README_img/05_Result Page.png" width="100%"/>
             </td>
             <td>
             </td>
@@ -153,7 +154,6 @@ gantt
 </table>
 
 ### 5.2 화면 설계
-- 화면은 gif파일로 업로드해주세요.
  
 <table>
     <tbody>
@@ -163,10 +163,10 @@ gantt
         </tr>
         <tr>
             <td>
-		<img src="ui_login.png" width="100%"/>
+		<img src="README_img/ui_login.png" width="100%"/>
             </td>
             <td>
-                <img src="ui_main.png" width="100%"/>
+                <img src="README_img/ui_main.png" width="100%"/>
             </td>
         </tr>
         <tr>
@@ -175,137 +175,78 @@ gantt
         </tr>
         <tr>
             <td>
-                <img src="ui_chatting.png" width="100%">
+                <img src="README_img/ui_chatting.png" width="100%">
             </td>
             <td>
-                <img src="ui_result.png" width="100%">
+                <img src="README_img/ui_result.png" width="100%">
             </td>
         </tr>
     </tbody>
 </table>
+<p align="center">
+    <img src="README_img/plan_site_v1.gif" width = "70%">
+</p>
+<p align="center" style="margin-top:-15px"><strong>[서비스 시연]</strong></p>
 
 
-## 6. 데이터베이스 모델링(ERD)
 
-* 아래 ERD는 머메이드를 사용했습니다.
+## 6. Architecture
 ```mermaid
-erDiagram
-    user ||--o{ post : write
-    user {
-      integer id PK
-      varchar username
-      varchar password
-      image profile_image
-      datetime created_at
-      varchar ip_address
-      datetime last_login
-    }
-    post }|--|{ tag : contains
-    post ||--o| category : has
-    post {
-      integer id PK
-      varchar title
-      text content
-      file file_upload
-      image image_upload
-      datetime created_at
-      datetime updated_at
-      varchar writer
-      integer user_id FK
-      integer hits
-      integer tags FK
-      varchar category FK
-    }
-    post ||--o{ comment : contains
-    comment ||--o{ comment : contains
-    comment {
-      integer id PK
-      integer parent FK
-      text comment
-      comment comment_reply FK
-      datetime created_at
-      datetime updated_at
-    }
-    
-    tag {
-      integer id PK
-      varchar name
-    }
-    
-    
-    category {
-      integer id PK
-      varchar name
-    }
-```
+graph LR
+    GitHub[GitHub] -- "Deploys" --> Frontend
+    Frontend -- "Request" --> ChatGPTAPI[Open AI API]
+    ChatGPTAPI -- "Response" --> Frontend
+   
 
-* 아래 ERD는 [ERDCloud](https://www.erdcloud.com/)를 사용했습니다.
-<img src="erd.png" width="60%">
-
-* https://dbdiagram.io/home도 많이 사용합니다.
-
-## 7. Architecture
-
-* 아래 Architecture 설계도는 ChatGPT에게 아키텍처를 설명하고 mermaid로 그려달라 요청한 것입니다.
-```mermaid
-graph TD;
-    CI[GitHub CI/CD] -->|Deploys| LS[AWS Lightsail];
-    A[Django Application] -->|Uses| DRF[Django REST Framework];
-    A -->|Real-time communication| C[Django Channels];
-    C -->|Messaging backend| R[Redis];
-    A -->|Connects to| DB[postgresql];
-    A -->|Static & Media Files| S3[AWS S3];
-    FE[Frontend] -->|Deployed on| LS;
-    LS -->|Hosts| A;
-    LS -->|Hosts| FE;
-
-    classDef framework fill:#f9f,stroke:#333,stroke-width:2px;
-    classDef aws fill:#ff9,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5;
-    classDef ci fill:#9cf,stroke:#33f,stroke-width:2px;
-    
-    class A,DRF,C,DB framework;
-    class LS,S3 aws;
-    class CI ci;
+    style Frontend fill:#f9f,stroke:#333,stroke-width:2px
+    style ChatGPTAPI fill:#f9f,stroke:#333,stroke-width:2px
+    style GitHub fill:#f9f,stroke:#333,stroke-width:2px
 
 ```
 
-* 아래 Architecture 설계도는 PPT를 사용했습니다.
+## 7. 메인 기능
+여행 계획 작성 서비스는 사용자의 요청에 따라 사용자의  일정을 작성해주는 서비스로, OpenAI API를 통해 사용자의 요구사항에 맞는 일정을 생성하는 서비스입니다.
+대화형 기능을 통해 사용자로부터 여행에 대한 구체적인 선호도와 요구사항을 파악하고 API를 통해 대화 내용에 따른 결과를 만듭니다. 
+분석 결과가 반환되면 계획의 내용을 출력하고 지도를 활용하여 관광명소 및 맛집 위치를 표현합니다.
+
+
+```mermaid
+graph TD
+    A[사용자] -->|로그인| B(로그인 페이지)
+    B --> C{메인 페이지}
+    C -->|누구와 여행, 일정 선택| D[대화형 기능]
+    D -->|질문| E[OpenAI API]
+    E -->|답변| D
+    D -->|결과 해석| F[일정 및 장소 내역 가공]
+    F -->|추천 일정| G[일정 표시]
+    F -->|추천 장소| H[Map API]
+    H -->|지도에 표시| I[사용자 인터페이스]
+```
+
+
+
+## 8. 에러
+
+- 원하는 요구의 답변을 얻지 못함
+  - 좌표를 결과를 반환 받는 내용에서 정확한 위치를 출력하지 못함.
+  - 날씨 정보를 요구했을 때 미래의 정보에 대한 예측이 어려움
+
+- 원하는 양식으로 결과가 반환되지 않을 경우 에러.
+  - 다시 재요청하기 위해 어떤 대답이 정확한 답변인지 판단이 어려웠다.
   
-![image](./architecture.png)
-
-- PPT로 간단하게 작성하였으나, 아키텍쳐가 커지거나, 상세한 내용이 필요할 경우 [AWS architecture Tool](https://online.visual-paradigm.com/ko/diagrams/features/aws-architecture-diagram-tool/)을 사용하기도 합니다.
-
-## 8. 메인 기능
 
 
-```mermaid
-		graph TD
-	    A[하루 시작] -->|일어난다| B(세수한다)
-	    B --> C{오늘은 무엇을 할까}
-	    C -->|밥을 먹는다| D[냉장고 확인]
-	    C -->|다시 잔다| E[침대로 돌아가기]
-	    C -->|티비를 본다| F[거실로 가기]
-```
+## 9. 개발하며 느낀점
 
-```mermaid
-		sequenceDiagram
-	    A->>+B: B야 소금좀 건내줘
-	    B->>+A: 여기
-	    A-->>-B: 고마워
-```
+- 프롬프트의 중요성 
+  - 사용자 요구사항에 대한 원하는 답변과 정확한 결과 값을 얻는 과정이 어려웠다. 
+  - 어떤 입력을 하고 어떤 설정을 하냐에 따라 결과가 달라지는 것을 확인했고, 해당 기술을 접목하여 효율적인 작업을 하고 싶다.
 
-```mermaid
-		stateDiagram-v2
-	    [*] --> 로그인
-	    로그인 --> 성공
-	    로그인 --> 실패
-	    실패 --> 아이디/비밀번호찾기
-	    아이디/비밀번호찾기 --> 로그인재시도
-	    로그인재시도 --> 성공
-	    성공 --> [*]
-```
+- 문서 작업에 대한 다양한 경험
+  - 프로젝트 문서 작업에 대한 시각화 자료 및 README 작성, 관리 방법 등 다양한 스킬을 경험했다.
+  - 프로젝트 개발보다 어려웠던 문서 작업을 직접 수행하여 관리의 중요성을 배웠다.
 
-## 9. 에러와 에러 해결
-
-
-## 10. 개발하며 느낀점
+- 책임감 및 자신감
+  - 단순히 미니 프로젝트 제출이 아닌 내 아이디어로 현실화한다고 생각하니 책임감이 컸다.
+  - 마감기간을 지키고 더 좋은 결과를 얻기 위해 노력했고 완벽하진 않지만 할 수 있다는 자신감이 생겼다. 
+  
