@@ -1,6 +1,6 @@
 # 🚀 넌 어디든 갈 수 있어
 <p align="center">
-<img src="title image.jpg" width="100%" height="450px"/>
+<img src="README_img/title image.jpg" width="100%" height="450px"/>
 </p>
 
 ## 📝 GPT를 활용한 프로젝트 
@@ -128,23 +128,23 @@ gantt
         </tr>
         <tr>
             <td>
-		<img src="01_project.png" width="100%"/>
+		<img src="README_img/01_project.png" width="100%"/>
             </td>
             <td>
-                <img src="02_Login Page.png" width="100%"/>
+                <img src="README_img/02_Login Page.png" width="100%"/>
             </td>
         </tr>
         <tr>
            <td>
-                <img src="03_Main Page.png" width="100%"/>
+                <img src="README_img/03_Main Page.png" width="100%"/>
             </td>
 	     <td>
-                <img src="04_Chatting Page.png" width="100%"/>
+                <img src="README_img/04_Chatting Page.png" width="100%"/>
             </td>
         </tr>
         <tr>
             <td>
-                <img src="05_Result Page.png" width="100%"/>
+                <img src="README_img/05_Result Page.png" width="100%"/>
             </td>
             <td>
             </td>
@@ -163,10 +163,10 @@ gantt
         </tr>
         <tr>
             <td>
-		<img src="ui_login.png" width="100%"/>
+		<img src="README_img/ui_login.png" width="100%"/>
             </td>
             <td>
-                <img src="ui_main.png" width="100%"/>
+                <img src="README_img/ui_main.png" width="100%"/>
             </td>
         </tr>
         <tr>
@@ -175,10 +175,10 @@ gantt
         </tr>
         <tr>
             <td>
-                <img src="ui_chatting.png" width="100%">
+                <img src="README_img/ui_chatting.png" width="100%">
             </td>
             <td>
-                <img src="ui_result.png" width="100%">
+                <img src="README_img/ui_result.png" width="100%">
             </td>
         </tr>
     </tbody>
