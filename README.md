@@ -1,13 +1,13 @@
 # 🚀 넌 어디든 갈 수 있어
 <p align="center">
-<img src="https://github.com/Um-king/chatGPT-Web-Project/assets/52156476/b455d750-b6a7-4162-bde7-a50ca4343262" width="85%" height="450px"/>
+<img src="https://github.com/Um-king/chatGPT-Web-Project/assets/52156476/b455d750-b6a7-4162-bde7-a50ca4343262" width="100%" height="450px"/>
 </p>
+
+## 📝 GPT를 활용한 프로젝트 
 
 <strong>"여행 일정을 작성해 봅시다"</strong>
 
 길었던 코로나19 시기가 끝나고 자유롭게 여행을 떠나고 싶지만 여행 계획을 작성하기 힘든 여행자들을 위한 여행 일정 추천 서비스.
-
-## 📝 GPT를 활용한 프로젝트 
 
 
 ## 1. 목표와 기능
@@ -119,10 +119,38 @@ gantt
 ## 5. 와이어프레임 / UI / BM
 
 ### 5.1 와이어프레임
-- 아래 페이지별 상세 설명, 더 큰 이미지로 하나하나씩 설명 필요
-<img src="ui.png" width="60%">
 
-- 와이어 프레임은 디자인을 할 수 있다면 '피그마'를, 디자인을 할 수 없다면 '카카오 오븐'으로 쉽게 만들 수 있습니다.
+<table>
+    <tbody>
+        <tr>
+            <td>메인</td>
+            <td>로그인</td>
+        </tr>
+        <tr>
+            <td>
+		<img src="https://github.com/Um-king/chatGPT-Web-Project/assets/52156476/abbbab75-2953-4e3c-9d9c-2a8fee09c8a3" width="100%"/>
+            </td>
+            <td>
+                <img src="https://github.com/Um-king/chatGPT-Web-Project/assets/52156476/b1d2f8fc-846f-4d3e-baef-949b3603e899" width="100%"/>
+            </td>
+        </tr>
+        <tr>
+           <td>
+                <img src="https://github.com/Um-king/chatGPT-Web-Project/assets/52156476/85bd0514-fcb4-47c4-be31-9b25a8825320" width="100%"/>
+            </td>
+	     <td>
+                <img src="https://github.com/Um-king/chatGPT-Web-Project/assets/52156476/37d68527-74f4-47a9-bb50-d538de727d8d" width="100%"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="https://github.com/Um-king/chatGPT-Web-Project/assets/52156476/93039079-da54-4927-8637-39e5dd1fbb89" width="100%"/>
+            </td>
+            <td>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 ### 5.2 화면 설계
 - 화면은 gif파일로 업로드해주세요.
@@ -135,10 +163,10 @@ gantt
         </tr>
         <tr>
             <td>
-		<img src="ui1.png" width="100%">
+		<img src="https://github.com/Um-king/chatGPT-Web-Project/assets/52156476/abbbab75-2953-4e3c-9d9c-2a8fee09c8a3" width="100%"/>
             </td>
             <td>
-                <img src="ui2.png" width="100%">
+                <img src="https://github.com/Um-king/chatGPT-Web-Project/assets/52156476/b1d2f8fc-846f-4d3e-baef-949b3603e899" width="100%"/>
             </td>
         </tr>
         <tr>
