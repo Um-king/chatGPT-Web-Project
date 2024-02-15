@@ -1,3 +1,10 @@
+// public 폴더에 저장한 이미지는 개별환경+ 배포환경 모두 잘 찾아옴
+// 하지만 public 하위 폴더를 만들고 그안에 저장한 이미지들은 개발환경에서만 잘 찾아오고 배포환경에서는 찾지않음.
+// 해결방안
+// <img src="https://내아이디.github.io/리포지토리명/img/image.jpg">
+// 와 같은 절대경로 사용하기
+// 예시 'https://um-king.github.io/chatGPT-Web-Project/image/marker/icon_darkgreenMarker.png'
+
 // 최초 선택 -> 기초 선택 이후인지 확인
 // true = 최초, false = 최초x
 let initFlag = true;
@@ -17,50 +24,58 @@ document.getElementById('chat-form').addEventListener('submit', function (e) {
 
     // 색상별 마커 내역 생성
     let redMarker = L.icon({
-        iconUrl: '../../image/marker/icon_redMarker.png', // 마커 이미지 URL
+        iconUrl: 'https://um-king.github.io/chatGPT-Web-Project/image/marker/icon_redMarker.png', // 마커 이미지 URL
+        //iconUrl: '../image/marker/icon_redMarker.png', // 마커 이미지 URL
         iconSize: [25, 30], // 아이콘 크기
         iconAnchor: [12, 41], // 아이콘의 앵커 포인트
         popupAnchor: [1, -34], // 팝업의 앵커 포인트
     });
     let darkblueMarker = L.icon({
-        iconUrl: '../image/marker/icon_darkblueMarker.png', // 마커 이미지 URL
+        iconUrl: 'https://um-king.github.io/chatGPT-Web-Project/image/marker/icon_darkblueMarker.png', // 마커 이미지 URL
+        //iconUrl: '../image/marker/icon_darkblueMarker.png', // 마커 이미지 URL
         iconSize: [25, 30], // 아이콘 크기
         iconAnchor: [12, 41], // 아이콘의 앵커 포인트
         popupAnchor: [1, -34], // 팝업의 앵커 포인트
     });
     let darkgreenMarker = L.icon({
-        iconUrl: '../image/marker/icon_darkgreenMarker.png', // 마커 이미지 URL
+        iconUrl: 'https://um-king.github.io/chatGPT-Web-Project/image/marker/icon_darkgreenMarker.png', // 마커 이미지 URL
+        //iconUrl: '../image/marker/icon_darkgreenMarker.png', // 마커 이미지 URL
         iconSize: [25, 30], // 아이콘 크기
         iconAnchor: [12, 41], // 아이콘의 앵커 포인트
         popupAnchor: [1, -34], // 팝업의 앵커 포인트
     });
     let lightgreenMarker = L.icon({
-        iconUrl: '../image/marker/icon_lightgreenMarker.png', // 마커 이미지 URL
+        iconUrl: 'https://um-king.github.io/chatGPT-Web-Project/image/marker/icon_lightgreenMarker.png', // 마커 이미지 URL
+        //iconUrl: '../image/marker/icon_lightgreenMarker.png', // 마커 이미지 URL
         iconSize: [25, 30], // 아이콘 크기
         iconAnchor: [12, 41], // 아이콘의 앵커 포인트
         popupAnchor: [1, -34], // 팝업의 앵커 포인트
     });
     let lightpurpleMarker = L.icon({
-        iconUrl: '../image/marker/icon_lightpurpleMarker.png', // 마커 이미지 URL
+        iconUrl: 'https://um-king.github.io/chatGPT-Web-Project/image/marker/icon_lightpurpleMarker.png', // 마커 이미지 URL
+        //iconUrl: '../image/marker/icon_lightpurpleMarker.png', // 마커 이미지 URL
         iconSize: [25, 30], // 아이콘 크기
         iconAnchor: [12, 41], // 아이콘의 앵커 포인트
         popupAnchor: [1, -34], // 팝업의 앵커 포인트
     });
     let pinkMarker = L.icon({
-        iconUrl: '../image/marker/icon_pinkMarker.png', // 마커 이미지 URL
+        iconUrl: 'https://um-king.github.io/chatGPT-Web-Project/image/marker/icon_pinkMarker.png', // 마커 이미지 URL
+        //iconUrl: '../image/marker/icon_pinkMarker.png', // 마커 이미지 URL
         iconSize: [25, 30], // 아이콘 크기
         iconAnchor: [12, 41], // 아이콘의 앵커 포인트
         popupAnchor: [1, -34], // 팝업의 앵커 포인트
     });
     let purpleMarker = L.icon({
-        iconUrl: '../image/marker/icon_purpleMarker.png', // 마커 이미지 URL
+        iconUrl: 'https://um-king.github.io/chatGPT-Web-Project/image/marker/icon_purpleMarker.png', // 마커 이미지 URL
+        //iconUrl: '../image/marker/icon_purpleMarker.png', // 마커 이미지 URL
         iconSize: [25, 30], // 아이콘 크기
         iconAnchor: [12, 41], // 아이콘의 앵커 포인트
         popupAnchor: [1, -34], // 팝업의 앵커 포인트
     });
 
     let yellowMarker = L.icon({
-        iconUrl: '../image/marker/icon_yellowMarker.png', // 마커 이미지 URL
+        iconUrl: 'https://um-king.github.io/chatGPT-Web-Project/image/marker/icon_yellowMarker.png', // 마커 이미지 URL
+        //iconUrl: '../image/marker/icon_yellowMarker.png', // 마커 이미지 URL
         iconSize: [25, 30], // 아이콘 크기
         iconAnchor: [12, 41], // 아이콘의 앵커 포인트
         popupAnchor: [1, -34], // 팝업의 앵커 포인트
@@ -129,8 +144,8 @@ function addMessageToChat(sender, text) {
     var profilePic = document.createElement('div');
     profilePic.className = 'profile-pic';
     if (sender === 'user') { 
-        //profilePic.style.backgroundImage = "url('https://um-king.github.io/chatGPT-Web-Project/image/icon/icon_user.png')";
-        profilePic.style.backgroundImage = "url('../image/icon/icon_user.png')";
+        //profilePic.style.backgroundImage = "url('../image/icon/icon_user.png')";
+        profilePic.style.backgroundImage = "url('https://um-king.github.io/chatGPT-Web-Project/image/icon/icon_user.png')";
     } else {
         //profilePic.style.backgroundImage = "url('../image/icon/icon_bot.png')";
         profilePic.style.backgroundImage = "url('https://um-king.github.io/chatGPT-Web-Project/image/icon/icon_bot.png')";
