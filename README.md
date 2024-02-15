@@ -1,5 +1,7 @@
 # 🚀 넌 어디든 갈 수 있어
-![title image](https://github.com/Um-king/chatGPT-Web-Project/assets/52156476/b455d750-b6a7-4162-bde7-a50ca4343262)
+<p align="center">
+<img src="https://github.com/Um-king/chatGPT-Web-Project/assets/52156476/b455d750-b6a7-4162-bde7-a50ca4343262" width="85%" height="450px"/>
+</p>
 
 <strong>"여행 일정을 작성해 봅시다"</strong>
 
